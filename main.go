@@ -161,7 +161,7 @@ func writeFile(filename string, data []byte) error {
 
 func main() {
 	opts := &DownloadOptions{}
-	flag.StringVar(&opts.version, "version", "1.6.2", "the go version to download")
+	flag.StringVar(&opts.version, "version", "1.7", "the go version to download")
 	flag.StringVar(&opts.platform, "platform", "linux-amd64", "the build platform")
 	flag.StringVar(&opts.output, "o", "", "output filename")
 	flag.BoolVar(&opts.verbose, "v", false, "toggles logging")
