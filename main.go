@@ -98,11 +98,13 @@ func downloadPackage(opts *DownloadOptions) error {
 	if err != nil {
 		return fmt.Errorf("Could not construct hash request: %v", err)
 	}
+
 	resp, err := onlyTalksToGoogle.RoundTrip(hashRequest)
-	defer resp.Body.Close()
 	if err != nil {
 		return fmt.Errorf("Failed to fetch hash: %v", err)
 	}
+	defer resp.Body.Close()
+
 	hashBuffer := new(bytes.Buffer)
 	n, err := io.Copy(hashBuffer, resp.Body)
 	if err != nil {
@@ -121,11 +123,13 @@ func downloadPackage(opts *DownloadOptions) error {
 	if err != nil {
 		return fmt.Errorf("Could not construct package request: %v", err)
 	}
+
 	resp, err = onlyTalksToGoogle.RoundTrip(packageRequest)
-	defer resp.Body.Close()
 	if err != nil {
 		return fmt.Errorf("Failed to fetch package: %v", err)
 	}
+	defer resp.Body.Close()
+
 	packageBuffer := new(bytes.Buffer)
 	_, err = io.Copy(packageBuffer, resp.Body)
 	if err != nil {
