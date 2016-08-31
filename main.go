@@ -16,8 +16,8 @@ import (
 	"net/http"
 )
 
-// Google Internet Authority G2 intermediate, expires 31 Dec 2016
-const GIA_G2_SHA256 = "A4124FDAF9CAC7BAEE1CAB32E3225D746500C09F3CF3EBB253EF3FBB088AFD34"
+// Google Internet Authority G2 intermediate, expires 31 Dec 2017
+const GIA_G2_SHA256 = "9F630426DF1D8ABFD80ACE98871BA833AB9742CB34838DE2B5285ED54C0C7DCC"
 
 // The official Golang binaries bucket
 const baseStorageURL = "https://storage.googleapis.com/golang"
